@@ -45,3 +45,8 @@ class GameLogic:
             if count >= 5:
                 return "black" if current_color == 1 else "white"
         return None
+    
+    # 在 game_logic.py 的 GameLogic 类中
+    def reset(self):
+        self.board = [[0 for _ in range(self.board_size + 1)] for _ in range(self.board_size + 1)] # 清空棋盘数组
+        self.game_over = False  # 将游戏结束标志设为 False
