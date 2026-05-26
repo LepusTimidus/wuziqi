@@ -1,5 +1,6 @@
 import tkinter as tk
 from chessboard import BoardUI
+from ai_chessboard import AIGameBoard  # 导入人机对战棋盘
 from tkinter import messagebox
 
 
@@ -40,13 +41,12 @@ class GameModeSelector:
         game_window.mainloop()
 
     def start_ai_game(self):
-        # 目前暂时跳转到人人对战模式，方便后续替换
         # 销毁当前的选择界面
         self.root.destroy()
-        # 创建新的窗口用于游戏
+        # 创建新的窗口用于人机对战游戏
         game_window = tk.Tk()
-        game_window.title("五子棋 - 双人对战版")
-        board_ui = BoardUI(game_window, board_size=15, cell_size=40, margin=30)
+        game_window.title("五子棋 - 人机对战版")
+        ai_board_ui = AIGameBoard(game_window, board_size=15, cell_size=40, margin=30)
         game_window.mainloop()
 
 
